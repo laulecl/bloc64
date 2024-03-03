@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="135.91437"
+   height="117.70527"
+   viewBox="0 0 135.91437 117.70527"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="/tmp/ink_ext_XXXXXX.svgVSQVJ2"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview22569"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="0.25"
+     inkscape:cx="30.0"
+     inkscape:cy="30.0"
+     inkscape:window-width="1584"
+     inkscape:window-height="1209"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid22575" />
+  </sodipodi:namedview>
+  <defs
+     id="defs22564">
+    <linearGradient
+       y2="289.50504"
+       x2="567.73163"
+       y1="289.50504"
+       x1="43.696991"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5352-3"
+       xlink:href="#linearGradient5215-9-0"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient5215-9-0">
+      <stop
+         style="stop-color:#4177ff;stop-opacity:0.38636363;"
+         offset="0"
+         id="stop5217-6-0" />
+      <stop
+         style="stop-color:#0000c1;stop-opacity:1;"
+         offset="1"
+         id="stop5219-7-1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5215-9-0"
+       id="linearGradient23099"
+       gradientUnits="userSpaceOnUse"
+       x1="43.196991"
+       y1="289.50504"
+       x2="568.23163"
+       y2="289.50504" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-140.91272,-89.896049)">
+    <path
+       sodipodi:type="star"
+       style="fill:url(#linearGradient5352-3);fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="path2985-30-1"
+       sodipodi:sides="6"
+       sodipodi:cx="305.71429"
+       sodipodi:cy="289.50504"
+       sodipodi:r1="262.0173"
+       sodipodi:r2="226.91364"
+       sodipodi:arg1="1.0471976"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 436.72294,516.41868 174.70563,516.41867 43.696991,289.50502 174.70565,62.591388 436.72296,62.591401 567.7316,289.50505 Z"
+       transform="matrix(0.25879117,0,0,0.25879117,129.75374,73.827349)"
+       inkscape:export-filename="bleu.svg"
+       inkscape:export-xdpi="19.86552"
+       inkscape:export-ydpi="19.86552" />
+    <path
+       sodipodi:type="star"
+       style="fill:url(#linearGradient23099);fill-opacity:1;stroke:#000014;stroke-width:13.5633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.714286"
+       id="path2985-3-9-2"
+       sodipodi:sides="6"
+       sodipodi:cx="305.71429"
+       sodipodi:cy="289.50504"
+       sodipodi:r1="262.0173"
+       sodipodi:r2="226.91364"
+       sodipodi:arg1="1.0471976"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 436.72294,516.41868 174.70563,516.41867 43.696991,289.50502 174.70565,62.591388 436.72296,62.591401 567.7316,289.50505 Z"
+       transform="matrix(0.21815273,0,0,0.22426043,142.28883,84.157409)"
+       inkscape:export-filename="/donnees1/Programmation/Java/Sixtris/themes/Modern/4.png"
+       inkscape:export-xdpi="19.86552"
+       inkscape:export-ydpi="19.86552" />
+  </g>
+</svg>
