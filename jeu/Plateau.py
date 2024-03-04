@@ -135,8 +135,9 @@ class Plateau:
         self.scene.removeItem(self.pause)
 
 
-    def supprimerLignesPleines(self):
+    def supprimerLignesPleines(self) -> int:
         y = self.lignes
+        deleted = 0
         while y >= 0:
             pleine = True
             for x in range(1, self.colonnes+1):
@@ -145,6 +146,7 @@ class Plateau:
                     break
 
             if pleine:
+                deleted += 1
                 for x in range(1, self.colonnes+1):
                     self.viderCase(x, y)
                     for y2 in range( y-1, -1, -1 ):
@@ -155,3 +157,5 @@ class Plateau:
 
             else:
                 y -= 1
+
+        return deleted

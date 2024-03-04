@@ -18,6 +18,8 @@ class Jeu:
         self.path = Path(__file__).parent.parent
         self.application = QtWidgets.QApplication(sys.argv)
 
+        self.config = Config(self)
+
         self.fenetrePrincipale = Principale(self)
 
         self.timer = QTimer()
@@ -25,11 +27,14 @@ class Jeu:
         self.pause = False
         self.level = 1
         self.mode = self.MODE_HEXA
+        self.score = 0
+        self.lignes = 0
+        self.pieces = 0
 
         self.theme = Theme(self)
         self.plateau = Plateau(self, self.fenetrePrincipale.plateau)
         self.suivant = Suivant(self, self.fenetrePrincipale.suivant)
-        self.config = Config(self)
+
 
 
     def charger(self):
@@ -60,7 +65,8 @@ class Jeu:
 
 
     def nouvellePiece(self):
-        self.plateau.supprimerLignesPleines()
+        self.pieces += 1
+        self.lignes += self.plateau.supprimerLignesPleines()
         self.pieceIndex = self.nextPieceIndex
         self.choisirProchainePiece()
         self.piece.nouvelle(self.pieceIndex)
@@ -93,5 +99,5 @@ class Jeu:
 
     def _speed(self) -> int:
         speed = -38 * (self.level-1) + 600
-        print(speed)
+
         return speed

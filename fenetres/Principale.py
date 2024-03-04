@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import Qt
-
+from .Preferences import Preferences
 
 class Principale(QtWidgets.QMainWindow):
     def __init__(self, jeu):
@@ -8,13 +8,20 @@ class Principale(QtWidgets.QMainWindow):
         self.setFocusPolicy(Qt.StrongFocus)
 
         self.jeu = jeu
+        self.preferences = Preferences(self.jeu)
 
         uic.loadUi(self.jeu.path / 'ui' / 'Principale.ui', self)
 
-        self.fermer.clicked.connect(self.close)
+        self.actionNouvelle.triggered.connect(self.nouvellePartie)
+        self.actionPreferences.triggered.connect(self.afficherPreferences)
 
 
     def show(self):
+        self.redimentionner()
+
+        super().show()
+
+    def redimentionner(self):
         margin = 10
 
         plateauWidth = self.jeu.plateau.largeur + 2
@@ -27,13 +34,20 @@ class Principale(QtWidgets.QMainWindow):
         self.suivant.setGeometry(margin + plateauWidth + margin, margin, suivantWidth, suivantHeight)
 
         windowWidth = margin + plateauWidth + margin + suivantWidth + margin
-        windowHeight = margin + plateauHeight + margin + 50
+        windowHeight = margin + plateauHeight + margin + 23
 
         self.setFixedSize(windowWidth, windowHeight)
 
-        self.fermer.setGeometry(margin + plateauWidth + margin, windowHeight - 50, 180, 25)
 
-        super().show()
+    def nouvellePartie(self):
+        self.jeu.demarrer()
+
+
+    def afficherPreferences(self):
+        if not self.jeu.pause:
+            self.jeu.togglePause()
+
+        self.preferences.exec_()
 
 
     def keyPressEvent(self, event):

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>800</height>
+    <width>518</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>800</height>
+    <width>518</width>
+    <height>613</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>800</width>
-    <height>800</height>
+    <width>518</width>
+    <height>613</height>
    </size>
   </property>
   <property name="baseSize">
@@ -44,19 +44,6 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <widget class="QPushButton" name="fermer">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>560</y>
-      <width>129</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Quitter l'application</string>
-    </property>
-   </widget>
    <widget class="QGraphicsView" name="plateau">
     <property name="geometry">
      <rect>
@@ -119,12 +106,42 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>518</width>
      <height>23</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuJeu">
+    <property name="title">
+     <string>Partie</string>
+    </property>
+    <addaction name="actionNouvelle"/>
+    <addaction name="actionTableau_des_scores"/>
+    <addaction name="actionPreferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuJeu"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNouvelle">
+   <property name="text">
+    <string>Nouvelle</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Paramètres</string>
+   </property>
+  </action>
+  <action name="actionTableau_des_scores">
+   <property name="text">
+    <string>Tableau des scores</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
