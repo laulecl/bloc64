@@ -19,6 +19,7 @@ class Jeu:
         self.application = QtWidgets.QApplication(sys.argv)
 
         self.config = Config(self)
+        self.config.charger()
 
         self.fenetrePrincipale = Principale(self)
 
@@ -41,7 +42,7 @@ class Jeu:
         self.theme.charger()
         self.plateau.preparer()
         self.suivant.preparer()
-        self.config.charger()
+        self.config.appliquer()
         self.fenetrePrincipale.show()
         sys.exit(self.application.exec_())
 

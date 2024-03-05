@@ -44,9 +44,6 @@ class Principale(QtWidgets.QMainWindow):
 
 
     def afficherPreferences(self):
-        if not self.jeu.pause:
-            self.jeu.togglePause()
-
         self.preferences.exec_()
 
 
@@ -78,6 +75,9 @@ class Principale(QtWidgets.QMainWindow):
 
             elif event.key() == Qt.Key_Right:
                 self.jeu.piece.droite()
+
+            elif event.key() == Qt.Key_2:
+                self.jeu.piece.bas()
 
             elif event.key() == Qt.Key_5:
                 self.jeu.piece.tourner()
