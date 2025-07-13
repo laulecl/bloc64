@@ -1,6 +1,6 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsView
-from PyQt5.QtCore import QTimer
+from PyQt6 import QtWidgets
+from PyQt6.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsView
+from PyQt6.QtCore import QTimer
 from .Piece import Piece
 from .Bloc import Bloc
 

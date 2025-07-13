@@ -1,8 +1,8 @@
 import sys
 import random
 from pathlib import Path
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import QTimer
+from PyQt6 import QtWidgets
+from PyQt6.QtCore import QTimer
 from fenetres.Principale import Principale
 from .Plateau import Plateau
 from .Theme import Theme
@@ -44,7 +44,7 @@ class Jeu:
         self.suivant.preparer()
         self.config.appliquer()
         self.fenetrePrincipale.show()
-        sys.exit(self.application.exec_())
+        sys.exit(self.application.exec())
 
 
     def chutePiece(self):

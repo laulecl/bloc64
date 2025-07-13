@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QGraphicsPixmapItem
+from PyQt6.QtWidgets import QGraphicsPixmapItem
 
 
 class Bloc :
@@ -12,6 +12,11 @@ class Bloc :
         self._lastY = y
 
         self.pixmap = QGraphicsPixmapItem(self.plateau.jeu.theme.blocs[index])
+
+        if index == 0:
+            self.pixmap.setZValue(9997)
+        else:
+            self.pixmap.setZValue(9998)
 
 
     @property

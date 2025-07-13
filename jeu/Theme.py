@@ -1,7 +1,9 @@
 import math
-from PyQt5.QtSvg import QGraphicsSvgItem, QSvgRenderer
-from PyQt5.QtGui import QPixmap, QPainter
-from PyQt5.QtCore import Qt, QSize
+import os.path
+
+from PyQt6.QtSvg import QSvgRenderer
+from PyQt6.QtGui import QPixmap, QPainter, QColor
+from PyQt6.QtCore import Qt, QSize
 
 class Theme:
 
@@ -9,6 +11,7 @@ class Theme:
         self.jeu = jeu
         self.name = 'default'
         self.taille = 20
+        self.fondFile = 'background.png'
 
 
     def charger(self):
@@ -36,7 +39,17 @@ class Theme:
             self.decalageWidth = 0
             self.decalageHeight = 0
 
-        self.fond = QPixmap(str(self.jeu.path / 'theme' / self.name / 'background.png'))
+
+        if os.path.exists(str(self.jeu.path / 'theme' / self.name / self.fondFile)):
+            self.fond = QPixmap(str(self.jeu.path / 'theme' / self.name / 'background2.png'))
+        elif os.path.exists(self.fondFile):
+            self.fond = QPixmap(self.fondFile)
+        else:
+            x = self.jeu.plateau.colonnes * self.stepWidth + self.decalageWidth + 50
+            y = self.jeu.plateau.lignes * self.stepHeight + self.decalageHeight + 50
+            self.fond = QPixmap(QSize(x,y))
+            self.fond.fill(QColor('black'))
+
         self.perdu = self._creerPerdu()
         self.pause = self._creerPause()
 
@@ -49,7 +62,7 @@ class Theme:
         svgFileName = str(self.jeu.path / 'theme' / self.name / f"{index}.svg")
 
         pixmap = QPixmap(QSize(self.blocWidth, self.blocHeight))
-        pixmap.fill(Qt.transparent)
+        pixmap.fill(Qt.GlobalColor.transparent)
         peintre = QPainter(pixmap)
         renderer = QSvgRenderer(svgFileName)
         renderer.render(peintre)  # Rendre le SVG sur le QPixmap
@@ -67,7 +80,7 @@ class Theme:
         y = int(x * renderer.defaultSize().height() / renderer.defaultSize().width())
 
         pixmap = QPixmap(QSize(x, y))
-        pixmap.fill(Qt.transparent)
+        pixmap.fill(Qt.GlobalColor.transparent)
         peintre = QPainter(pixmap)
         renderer.render(peintre)  # Rendre le SVG sur le QPixmap
         peintre.end()
@@ -84,7 +97,7 @@ class Theme:
         y = int(x * renderer.defaultSize().height() / renderer.defaultSize().width())
 
         pixmap = QPixmap(QSize(x, y))
-        pixmap.fill(Qt.transparent)
+        pixmap.fill(Qt.GlobalColor.transparent)
         peintre = QPainter(pixmap)
         renderer.render(peintre)  # Rendre le SVG sur le QPixmap
         peintre.end()

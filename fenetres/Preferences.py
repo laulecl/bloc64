@@ -1,12 +1,12 @@
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QShowEvent
+from PyQt6 import QtWidgets, uic
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QShowEvent
 
 
 class Preferences(QtWidgets.QDialog):
     def __init__(self, jeu):
         super().__init__()
-        self.setFocusPolicy(Qt.StrongFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
 
         self.jeu = jeu
 

@@ -1,1 +1,26 @@
-.idea
+# Répertoires __pycache__
+**/__pycache__/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Fichiers de cache Python
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers de configuration local
+*.env
+*.local
+
+# Fichiers de sortie/d'exécution
+*.log
+*.sqlite3
+
+# Fichiers de l'éditeur
+.idea/
+.vscode/
+*.swp
+*.swo

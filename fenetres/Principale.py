@@ -1,16 +1,20 @@
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtCore import Qt
+from PyQt6 import QtWidgets, uic
+from PyQt6.QtCore import Qt
 from .Preferences import Preferences
 
 class Principale(QtWidgets.QMainWindow):
     def __init__(self, jeu):
         super().__init__()
-        self.setFocusPolicy(Qt.StrongFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
 
         self.jeu = jeu
         self.preferences = Preferences(self.jeu)
 
         uic.loadUi(self.jeu.path / 'ui' / 'Principale.ui', self)
+
+        # Désactiver le focus sur les enfants
+        self.plateau.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.suivant.setFocusPolicy(Qt.FocusPolicy.NoFocus)
 
         self.actionNouvelle.triggered.connect(self.nouvellePartie)
         self.actionPreferences.triggered.connect(self.afficherPreferences)
@@ -48,12 +52,14 @@ class Principale(QtWidgets.QMainWindow):
 
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key_F2:
+        key = event.key()
+
+        if key == Qt.Key.Key_F2:
             self.jeu.demarrer()
             super().keyPressEvent(event)
             return
 
-        if event.key() == Qt.Key_P:
+        if key == Qt.Key.Key_P:
             self.jeu.togglePause()
             super().keyPressEvent(event)
             return
@@ -61,33 +67,33 @@ class Principale(QtWidgets.QMainWindow):
         if self.jeu.pause:
             return
         else:
-            if event.key() == Qt.Key_Up:
+            if key == Qt.Key.Key_Up:
                 self.jeu.piece.tourner()
 
-            elif event.key() == Qt.Key_Down:
+            elif key == Qt.Key.Key_Down:
                 self.jeu.piece.precipiter()
 
-            elif event.key() == Qt.Key_Space:
+            elif key == Qt.Key.Key_Space:
                 self.jeu.piece.precipiter()
 
-            elif event.key() == Qt.Key_Left:
+            elif key == Qt.Key.Key_Left:
                 self.jeu.piece.gauche()
 
-            elif event.key() == Qt.Key_Right:
+            elif key == Qt.Key.Key_Right:
                 self.jeu.piece.droite()
 
-            elif event.key() == Qt.Key_2:
+            elif key == Qt.Key.Key_2:
                 self.jeu.piece.bas()
 
-            elif event.key() == Qt.Key_5:
+            elif key == Qt.Key.Key_5:
                 self.jeu.piece.tourner()
 
-            elif event.key() == Qt.Key_4:
+            elif key == Qt.Key.Key_4:
                 for i in range(1,4):
                     self.jeu.piece.gauche()
 
-            elif event.key() == Qt.Key_6:
+            elif key == Qt.Key.Key_6:
                 for i in range(1,4):
                     self.jeu.piece.droite()
-
+                
             super().keyPressEvent(event)

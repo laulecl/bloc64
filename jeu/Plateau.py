@@ -1,6 +1,6 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsView
-from PyQt5.QtCore import QTimer
+from PyQt6 import QtWidgets
+from PyQt6.QtWidgets import QWidget, QGraphicsPixmapItem, QGraphicsView
+from PyQt6.QtCore import QTimer
 from .Bloc import Bloc
 
 
@@ -32,6 +32,7 @@ class Plateau:
         self.widget.setScene(self.scene)
 
         self.fond = QGraphicsPixmapItem(self.jeu.theme.fond)
+        self.fond.setZValue(0)
         self.scene.addItem(self.fond)
 
         if self.jeu.mode == self.jeu.MODE_HEXA:
@@ -120,6 +121,7 @@ class Plateau:
         perduX = int((self.largeur - self.perdu.boundingRect().width())/2)
         perduY = int((self.hauteur - self.perdu.boundingRect().height())/2)
         self.perdu.setPos(perduX, perduY)
+        self.perdu.setZValue(9999)
         self.scene.addItem(self.perdu)
 
 
@@ -128,6 +130,7 @@ class Plateau:
         pauseX = int((self.largeur - self.pause.boundingRect().width())/2)
         pauseY = int((self.hauteur - self.pause.boundingRect().height())/2)
         self.pause.setPos(pauseX, pauseY)
+        self.pause.setZValue(9999)
         self.scene.addItem(self.pause)
 
 
