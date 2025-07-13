@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="159.72314"
+   height="138.92615"
+   viewBox="0 0 159.72314 138.92615"
+   version="1.1"
+   id="SVGRoot"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22564">
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter5712-7-1"
+       width="1.1777644"
+       height="1.182889"
+       x="-0.069799498"
+       y="-0.080427073">
+      <feGaussianBlur
+         id="feGaussianBlur5714-6-2"
+         in="SourceAlpha"
+         stdDeviation="15"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5716-7-9"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.7 0 " />
+      <feOffset
+         id="feOffset5718-3-3"
+         in="bluralpha"
+         dx="20"
+         dy="10"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5720-6-1">
+        <feMergeNode
+           id="feMergeNode5722-5-9"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5724-6-4"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(104.80944,-435.79596)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1;filter:url(#filter5712-7-1)"
+       id="path2985-30-9-0"
+       d="M 436.72294,516.41868 174.70563,516.41867 43.696991,289.50502 174.70565,62.591388 436.72296,62.591401 567.7316,289.50505 Z"
+       transform="matrix(0.25879117,0,0,0.25879117,-106.65194,429.04373)" />
+  </g>
+</svg>
